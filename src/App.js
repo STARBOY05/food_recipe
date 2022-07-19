@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-
 import Recipe from './Recipe'
 import './App.css'
 
 function App() {
-
-  const APP_ID = "328b675a"
-  const APP_KEY = "e58260b7cbb6903e1dd6a1cbe0a852eb"
+  const APP_ID = process.env.REACT_APP_API_ID
+  const APP_KEY = process.env.REACT_APP_API_KEY
 
   // Used for storing fetched recipes
   const [recipes, setRecipes] = useState([])
@@ -18,13 +16,12 @@ function App() {
 
   const getRecipes = async () => {
     // Some data which doesn't arrive instantly can be controlled using promises async and await
-    // Aquiring data from API
+    // Acquiring data from API
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
     // IN JSON FORMAT
     const data = await response.json()
     // Store the data array
     setRecipes(data.hits)
-    console.log(data.hits)
   }
   // Takes input at runtime which leads to too many API Requests so create a state which stores the final search value query
   const handleSearch = (e) => {

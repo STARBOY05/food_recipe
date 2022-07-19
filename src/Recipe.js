@@ -6,7 +6,7 @@ function Recipe(props) {
     <div className='recipe-card'>
       <img src={props.img} alt={props.title} />
       <div className='recipe-content'>
-        <h3>{props.title}</h3>
+        <p>{props.title}</p>
         <h4>Calories: {props.calories}</h4>
       </div>
     </div>

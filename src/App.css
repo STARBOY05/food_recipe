@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: slateblue;
+
+}
+
 .App {
     width: 100%;
     font-family: 'Poppins', sans-serif;
@@ -38,6 +43,7 @@
 .search-bar {
     padding: 10px 20px;
     font-size: 1.2rem;
+    max-width: 50%;
 }
 
 .search-button {
