@@ -4,8 +4,8 @@ import Recipe from './Recipe'
 import './App.css'
 
 function App() {
-  const APP_ID = process.env.REACT_APP_API_ID
-  const APP_KEY = process.env.REACT_APP_API_KEY
+  const APP_ID = "328b675a"
+  const APP_KEY = "e58260b7cbb6903e1dd6a1cbe0a852eb"
 
   // Used for storing fetched recipes
   const [recipes, setRecipes] = useState([])
@@ -37,6 +37,7 @@ function App() {
   // useEffect - You tell React that your component needs to do something after render.
   useEffect(() => {
     getRecipes();
+    // eslint-disable-next-line
   }, [query])
 
   return (
@@ -49,9 +50,7 @@ function App() {
           </form>
         </div>
         <div className='recipes-area'>
-          {recipes.map(recipe => (
-            <Recipe key={recipe.recipe.label} title={recipe.recipe.label} img={recipe.recipe.image} calories={Math.ceil(recipe.recipe.calories)} />
-          ))}
+          {recipes.map(recipe => <Recipe key={Math.random(1, 100)} title={recipe.recipe.label} img={recipe.recipe.image} calories={Math.ceil(recipe.recipe.calories)} />)}
         </div>
       </div>
     </div>
