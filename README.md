@@ -1,3 +1,10 @@
+# Created a Food Recipe App using ReactJs and Edamam Food API
+<ul>
+  <li>Learnt how to use grid container</li>
+  <li>Learnt how to fetch data from API</li>
+</ul>
+<hr>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
